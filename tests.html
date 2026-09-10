@@ -3,48 +3,54 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Erroneous Website Test Report</title>
+    <title>Test Report - BugLab University</title>
     <link rel="stylesheet" href="styles.css">
   </head>
   <body class="test-page">
-    <header class="topbar">
-      <a class="brand" href="index.html" aria-label="Back to website">
-        <span class="brand-mark">T</span>
-        <span>Test Report</span>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="BugLab University home">
+        <span class="brand-mark">BL</span>
+        <span>BugLab University</span>
       </a>
-      <nav class="nav-links" aria-label="Report navigation">
-        <a href="index.html">Website</a>
-        <a href="#test-results">Results</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="courses.html">Courses</a>
+        <a href="error-demo.html">Error Demo</a>
+        <!-- <a class="active" href="tests.html">Test Report</a> -->
+        <a href="contact.html">Contact</a>
       </nav>
     </header>
 
     <main>
-      <section class="report-hero">
-        <div>
-          <p class="eyebrow">Step 4</p>
-          <h1>Passed and Failed Test Cases</h1>
-          <p>
-            This page automatically tests the erroneous website and displays
-            the result of each case.
-          </p>
-        </div>
-        <div class="scoreboard" aria-label="Test result summary">
+      <section class="page-header">
+        <div class="container report-top">
           <div>
-            <span id="passed-count">0</span>
-            <small>Passed</small>
+            <p class="eyebrow">Step 4</p>
+            <h1>Passed and Failed Test Cases</h1>
+            <p class="lead">
+              The report runs browser checks against the erroneous page and
+              displays the expected result, actual result, and status.
+            </p>
           </div>
-          <div>
-            <span id="failed-count">0</span>
-            <small>Failed</small>
+          <div class="scoreboard" aria-label="Test result summary">
+            <div>
+              <span id="passed-count">0</span>
+              <small>Passed</small>
+            </div>
+            <div>
+              <span id="failed-count">0</span>
+              <small>Failed</small>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="section-band" id="test-results" aria-labelledby="results-title">
-        <div class="section-inner">
-          <div class="section-heading">
+      <section class="band light" id="test-results">
+        <div class="container">
+          <div class="section-title">
             <p class="eyebrow">Automated checks</p>
-            <h2 id="results-title">Execution Results</h2>
+            <h2>Execution Results</h2>
           </div>
           <div class="result-table-wrap">
             <table class="result-table">
@@ -67,7 +73,8 @@
       </section>
     </main>
 
-    <iframe class="test-frame" id="site-frame" src="index.html" title="Website under test"></iframe>
+    <iframe class="test-frame" id="site-frame" src="error-demo.html" title="Website page under test"></iframe>
+    <script src="app.js"></script>
     <script src="tests.js"></script>
   </body>
 </html>

@@ -34,7 +34,7 @@
   function runTests() {
     const siteWindow = frame.contentWindow;
     const siteDocument = frame.contentDocument;
-    const heroImage = siteDocument.querySelector(".hero-media img");
+    const previewImage = siteDocument.querySelector(".broken-preview");
     const courseCard = siteDocument.querySelector(".course-card");
     const addButton = siteDocument.querySelector("#add-course");
     const cartTotal = siteDocument.querySelector("#cart-total");
@@ -46,13 +46,13 @@
     const results = [
       {
         name: "Page title is available",
-        expected: "Browser title should contain the website name.",
+        expected: "Browser title should contain Error Demo.",
         actual: siteDocument.title,
-        passed: siteDocument.title.includes("Campus Course Cart")
+        passed: siteDocument.title.includes("Error Demo")
       },
       {
         name: "Main heading is visible",
-        expected: "The home page should have one main heading.",
+        expected: "The tested page should have one main heading.",
         actual: siteDocument.querySelectorAll("h1").length + " h1 element found",
         passed: siteDocument.querySelectorAll("h1").length === 1
       },
@@ -65,26 +65,20 @@
       {
         name: "Invalid email is rejected",
         expected: "student.example.edu should be rejected.",
-        actual: siteWindow.erroneousSite.isUniversityEmail("student.example.edu")
-          ? "Accepted"
-          : "Rejected",
+        actual: siteWindow.erroneousSite.isUniversityEmail("student.example.edu") ? "Accepted" : "Rejected",
         passed: siteWindow.erroneousSite.isUniversityEmail("student.example.edu") === false
       },
       {
         name: "Apply navigation target works",
-        expected: "The Apply link should point to an existing section.",
-        actual: siteDocument.querySelector("#admission-form")
-          ? "Target exists"
-          : "Target missing",
-        passed: Boolean(siteDocument.querySelector("#admission-form"))
+        expected: "The Apply Now button should point to an existing section.",
+        actual: siteDocument.querySelector("#enroll-now") ? "Target exists" : "Target missing",
+        passed: Boolean(siteDocument.querySelector("#enroll-now"))
       },
       {
-        name: "Hero image loads",
-        expected: "The hero image should load successfully.",
-        actual: heroImage.complete && heroImage.naturalWidth > 0
-          ? "Image loaded"
-          : "Image broken",
-        passed: heroImage.complete && heroImage.naturalWidth > 0
+        name: "Course preview image loads",
+        expected: "The course preview image should load successfully.",
+        actual: previewImage.complete && previewImage.naturalWidth > 0 ? "Image loaded" : "Image broken",
+        passed: previewImage.complete && previewImage.naturalWidth > 0
       },
       {
         name: "Displayed price matches stored price",
@@ -101,9 +95,7 @@
       {
         name: "University email is accepted",
         expected: "student@example.edu should be accepted.",
-        actual: siteWindow.erroneousSite.isUniversityEmail("student@example.edu")
-          ? "Accepted"
-          : "Rejected",
+        actual: siteWindow.erroneousSite.isUniversityEmail("student@example.edu") ? "Accepted" : "Rejected",
         passed: siteWindow.erroneousSite.isUniversityEmail("student@example.edu") === true
       }
     ];
@@ -112,6 +104,6 @@
   }
 
   frame.addEventListener("load", function () {
-    setTimeout(runTests, 100);
+    setTimeout(runTests, 150);
   });
 })();
