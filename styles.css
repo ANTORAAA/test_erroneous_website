@@ -1,0 +1,405 @@
+:root {
+  --ink: #1f2937;
+  --muted: #5b6675;
+  --line: #d7dee8;
+  --paper: #ffffff;
+  --mist: #f4f7fb;
+  --cyan: #0f7f8f;
+  --green: #147a48;
+  --red: #b42318;
+  --amber: #b7791f;
+  --charcoal: #243041;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--mist);
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  min-height: 72px;
+  padding: 0 32px;
+  color: #ffffff;
+  background: var(--charcoal);
+}
+
+.brand,
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand {
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.brand-mark {
+  display: inline-grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border-radius: 6px;
+  color: var(--charcoal);
+  background: #48d1cc;
+}
+
+.nav-links a {
+  padding: 8px 10px;
+  border-radius: 6px;
+  color: #e9eef6;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.hero,
+.report-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 520px);
+  gap: 40px;
+  align-items: center;
+  padding: 56px 32px 64px;
+  background: #ffffff;
+}
+
+.hero-copy,
+.report-hero > div:first-child,
+.section-inner {
+  max-width: 1120px;
+}
+
+.hero h1,
+.report-hero h1 {
+  max-width: 760px;
+  margin: 0 0 14px;
+  font-size: clamp(2rem, 6vw, 4.4rem);
+  line-height: 1.02;
+  letter-spacing: 0;
+}
+
+.hero p,
+.report-hero p {
+  max-width: 640px;
+  color: var(--muted);
+  font-size: 1.08rem;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--cyan);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 10px 16px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button.primary {
+  color: #ffffff;
+  background: var(--cyan);
+}
+
+.button.secondary {
+  color: var(--charcoal);
+  border-color: var(--line);
+  background: #ffffff;
+}
+
+.hero-media {
+  margin: 0;
+}
+
+.hero-media img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border: 2px dashed var(--amber);
+  border-radius: 8px;
+  background: repeating-linear-gradient(
+    135deg,
+    #fff7e6,
+    #fff7e6 12px,
+    #fde2a8 12px,
+    #fde2a8 24px
+  );
+}
+
+.hero-media figcaption,
+.small-note,
+.muted {
+  color: var(--muted);
+}
+
+.hero-media figcaption {
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+.section-band {
+  padding: 44px 32px;
+  background: #eef6f7;
+}
+
+.section-band.light {
+  background: #ffffff;
+}
+
+.section-inner {
+  margin: 0 auto;
+}
+
+.section-heading {
+  margin-bottom: 22px;
+}
+
+.section-heading h2,
+.form-layout h2 {
+  margin: 0;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  letter-spacing: 0;
+}
+
+.course-grid,
+.form-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 24px;
+  align-items: start;
+}
+
+.course-card,
+.summary-panel,
+.registration-form {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+}
+
+.course-card,
+.summary-panel {
+  padding: 24px;
+}
+
+.course-card h3,
+.summary-panel h3 {
+  margin: 0 0 10px;
+  font-size: 1.25rem;
+}
+
+.course-meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.course-meta div {
+  padding: 14px;
+  border-radius: 6px;
+  background: #f6f9fc;
+}
+
+.course-meta dt {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.course-meta dd {
+  margin: 4px 0 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+#cart-total {
+  display: block;
+  margin: 8px 0;
+  font-size: 2.2rem;
+  font-weight: 800;
+}
+
+.registration-form {
+  display: grid;
+  gap: 10px;
+  padding: 24px;
+}
+
+.registration-form label {
+  font-weight: 700;
+}
+
+.registration-form input {
+  width: 100%;
+  min-height: 42px;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font: inherit;
+}
+
+.form-message {
+  min-height: 24px;
+  margin: 0;
+  color: var(--red);
+  font-weight: 700;
+}
+
+.footer {
+  padding: 24px 32px;
+  color: #ffffff;
+  background: var(--charcoal);
+}
+
+.scoreboard {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(120px, 1fr));
+  gap: 12px;
+}
+
+.scoreboard div {
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.scoreboard span {
+  display: block;
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.scoreboard small {
+  color: var(--muted);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.result-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.result-table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+}
+
+.result-table th,
+.result-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.result-table th {
+  color: #ffffff;
+  background: var(--charcoal);
+}
+
+.result-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.status {
+  display: inline-flex;
+  min-width: 78px;
+  justify-content: center;
+  padding: 5px 9px;
+  border-radius: 999px;
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.status.pass {
+  background: var(--green);
+}
+
+.status.fail {
+  background: var(--red);
+}
+
+.test-frame {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  border: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 800px) {
+  .topbar,
+  .nav-links,
+  .hero-actions {
+    align-items: stretch;
+  }
+
+  .topbar {
+    flex-direction: column;
+    padding: 16px;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .hero,
+  .report-hero,
+  .course-grid,
+  .form-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .hero,
+  .report-hero,
+  .section-band {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+}

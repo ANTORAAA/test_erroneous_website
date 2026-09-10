@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erroneous Website Test Report</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body class="test-page">
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="Back to website">
+        <span class="brand-mark">T</span>
+        <span>Test Report</span>
+      </a>
+      <nav class="nav-links" aria-label="Report navigation">
+        <a href="index.html">Website</a>
+        <a href="#test-results">Results</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="report-hero">
+        <div>
+          <p class="eyebrow">Step 4</p>
+          <h1>Passed and Failed Test Cases</h1>
+          <p>
+            This page automatically tests the erroneous website and displays
+            the result of each case.
+          </p>
+        </div>
+        <div class="scoreboard" aria-label="Test result summary">
+          <div>
+            <span id="passed-count">0</span>
+            <small>Passed</small>
+          </div>
+          <div>
+            <span id="failed-count">0</span>
+            <small>Failed</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-band" id="test-results" aria-labelledby="results-title">
+        <div class="section-inner">
+          <div class="section-heading">
+            <p class="eyebrow">Automated checks</p>
+            <h2 id="results-title">Execution Results</h2>
+          </div>
+          <div class="result-table-wrap">
+            <table class="result-table">
+              <thead>
+                <tr>
+                  <th>Test case</th>
+                  <th>Expected result</th>
+                  <th>Actual result</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="results-body">
+                <tr>
+                  <td colspan="4">Running tests...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <iframe class="test-frame" id="site-frame" src="index.html" title="Website under test"></iframe>
+    <script src="tests.js"></script>
+  </body>
+</html>

@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Course Cart - Erroneous Website</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="Campus Course Cart home">
+        <span class="brand-mark">C</span>
+        <span>Campus Course Cart</span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#courses">Courses</a>
+        <a href="#admission-form">Apply</a>
+        <a href="tests.html">Test Report</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Software Testing Assignment</p>
+          <h1>Intentionally Erroneous Website</h1>
+          <p>
+            This demo page includes deliberate defects so a test page can show
+            both passed and failed test cases.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#courses">View Courses</a>
+            <a class="button secondary" href="tests.html">Open Tests</a>
+          </div>
+        </div>
+        <figure class="hero-media">
+          <img src="assets/missing-campus-lab.jpg" alt="">
+          <figcaption>Deliberately broken image path for a failing test case.</figcaption>
+        </figure>
+      </section>
+
+      <section class="section-band" id="courses" aria-labelledby="courses-title">
+        <div class="section-inner">
+          <div class="section-heading">
+            <p class="eyebrow">Available module</p>
+            <h2 id="courses-title">Quality Assurance Fundamentals</h2>
+          </div>
+          <div class="course-grid">
+            <article class="course-card" data-price="199">
+              <div>
+                <h3>Web Testing Lab</h3>
+                <p>
+                  Practice visual checks, form validation, broken link testing,
+                  and simple JavaScript assertions.
+                </p>
+              </div>
+              <dl class="course-meta">
+                <div>
+                  <dt>Displayed fee</dt>
+                  <dd id="displayed-price">$299</dd>
+                </div>
+                <div>
+                  <dt>Duration</dt>
+                  <dd>4 weeks</dd>
+                </div>
+              </dl>
+              <button class="button primary" id="add-course" type="button">
+                Add Course
+              </button>
+            </article>
+
+            <aside class="summary-panel" aria-labelledby="cart-title">
+              <h3 id="cart-title">Course Cart</h3>
+              <p class="muted">Selected item total</p>
+              <output id="cart-total">$0</output>
+              <p class="small-note">
+                The cart calculation is deliberately incorrect for testing.
+              </p>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-band light" aria-labelledby="form-title">
+        <div class="section-inner form-layout">
+          <div>
+            <p class="eyebrow">Application</p>
+            <h2 id="form-title">Student Registration</h2>
+            <p class="muted">
+              The form contains one working validation check and one faulty
+              validation rule.
+            </p>
+          </div>
+
+          <form class="registration-form" id="registration-form" novalidate>
+            <label for="student-name">Student name</label>
+            <input id="student-name" name="student-name" type="text" value="Ayesha Rahman">
+
+            <label for="student-email">University email</label>
+            <input id="student-email" name="student-email" type="email" value="ayesha@student.example.edu">
+
+            <label for="student-id">Student ID</label>
+            <input id="student-id" name="student-id" type="text" value="CSE-2026-018">
+
+            <button class="button primary" id="submit-application" type="button">
+              Submit Application
+            </button>
+            <p class="form-message" id="form-message" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Created for an erroneous website testing assignment.</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
