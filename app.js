@@ -1,20 +1,10 @@
 (function () {
-  const menuToggle = document.querySelector(".menu-toggle");
-  const siteNav = document.querySelector("#site-nav");
   const addCourseButton = document.querySelector("#add-course");
   const cartTotal = document.querySelector("#cart-total");
   const courseCard = document.querySelector(".course-card");
   const submitButton = document.querySelector("#submit-application");
   const emailInput = document.querySelector("#student-email");
   const formMessage = document.querySelector("#form-message");
-
-  if (menuToggle && siteNav) {
-    menuToggle.addEventListener("click", function () {
-      const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
-      menuToggle.setAttribute("aria-expanded", String(!isOpen));
-      siteNav.classList.toggle("open", !isOpen);
-    });
-  }
 
   function parseMoney(value) {
     return Number(String(value).replace(/[^0-9.]/g, ""));
